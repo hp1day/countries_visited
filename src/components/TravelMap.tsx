@@ -7,7 +7,7 @@ import { countryData } from "@/data/seasons";
 import { Plus, Minus, RotateCcw, Compass } from "lucide-react";
 
 // Path to our local world map TopoJSON
-const geoUrl = "/countries-110m.json";
+const geoUrl = "/countries_visited/countries-110m.json";
 
 interface TravelMapProps {
   visitedCountries: string[];
