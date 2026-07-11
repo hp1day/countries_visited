@@ -112,10 +112,16 @@ export default function Home() {
     showToast("Reset all country tracker records.");
   };
 
-  const handleMarkPopular = () => {
-    const popular = ["JPN", "FRA", "ITA", "USA", "CAN", "AUS", "ESP", "BRA"];
-    saveVisits(popular);
-    showToast("Populated tracker with 8 popular destinations!");
+  const handleLoadDemo = () => {
+    const defaultVisits = [
+      "CAN", "MEX", "PRI", "BHS", "GBR", "CYM", "BMU", "FLK", "FRA", "IRL", 
+      "DNK", "DEU", "FIN", "RUS", "EST", "SWE", "ESP", "TUN", "ITA", "VAT", 
+      "MCO", "PRT", "BEL", "CZE", "AUT", "NZL", "KOR", "JPN", "CHE", "GRC", 
+      "TUR", "ARE", "BHR", "QAT", "ARG", "CHL", "URY", "ISL", "NOR", "ROU", 
+      "SRB", "HUN", "BGR"
+    ];
+    saveVisits(defaultVisits);
+    showToast("Restored tracker to your 43 preloaded visited countries! 🌍✨");
   };
 
   // Toast notification manager
@@ -307,12 +313,12 @@ export default function Home() {
         {/* Header Controls */}
         <div className="flex items-center gap-2 self-end md:self-auto">
           <button
-            onClick={handleMarkPopular}
+            onClick={handleLoadDemo}
             className="px-4 py-2.5 rounded-xl text-xs font-semibold glass-card border border-[var(--card-border)] hover:text-purple-500 flex items-center gap-2 hover:bg-slate-500/5 cursor-pointer"
-            title="Pre-populate 8 countries to try the UI"
+            title="Restore all 43 default visited countries"
           >
             <Sparkles size={14} className="text-purple-500" />
-            <span>Load Demo</span>
+            <span>Load Demo (43)</span>
           </button>
 
           <button
